@@ -3,8 +3,6 @@ const users = require ('../db/models/users')
 const { successfunction, errorfunction } = require('../util/responsehandler')
 const bcrypt = require ('bcrypt')
 const jwt =require('jsonwebtoken')
-const { response } = require('express');
-const UserType = require('../db/models/user_types');
 
 exports.login = async function (req,res){
     try {
@@ -23,6 +21,7 @@ exports.login = async function (req,res){
 
         if(view){
             let user_password = view.password;
+            console.log("user_password ",user_password)
 
             let password_match = bcrypt.compareSync(password,user_password); 
             console.log("passsword match",password_match)

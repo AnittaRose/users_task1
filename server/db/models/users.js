@@ -16,6 +16,12 @@ const users = new mongoose.Schema({
 
         type :mongoose.Schema.Types.ObjectId,
         ref : "user_type"
+    },
+    image : {
+        type : String
+    },
+    password_token : {
+        type : String
     }
 
 
